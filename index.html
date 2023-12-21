@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--<link href="style.css" rel="stylesheet">-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+
+  <title>Reagentário LPT</title>
+  <style>
+
+header {
+    background-color: #2a2c2a ; 
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+    padding-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.btn-primary {
+    color: #ffffff; 
+    background-color: #2a2c2a; 
+    border-style: none;
+    margin-bottom: 4rem;
+}
+
+.btn-primary:hover {
+    background-color: #6b706b;   
+}
+
+footer {
+      background-color: #272C27;
+      color: #ffffff;
+      text-align: center;
+
+      width: 100%;}
+
+body {
+  padding-bottom: 10rem;
+}
+
+  </style>
+  
+</head>
+
+<body>
+  <header>
+    <h1>Laboratório de Produtos e Tecnologia em Processos</h1>          
+  </header>
+  <div class="container mt-5">
+    <form>
+      <div class="container mt-5">
+        <h2>Cadastro de Produtos</h2>
+        <form>
+          <div class="mb-3">
+            <label for="id_produto" class="form-label">ID do Produto</label>
+            <input type="text" class="form-control" id="id_produto" readonly />
+          </div>
+
+          <div class="mb-3">
+            <label for="tipo" class="form-label">Tipo*</label>
+            <select class="form-select" id="tipo" required>
+              <option value="reagente">Reagente</option>
+              <option value="solvente">Solvente</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome do produto*</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite o Nome" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="nome" class="form-label">Link da ficha de segurança do produto (FISPQ)*</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite link da ficha de segurança do produto " required />
+          </div>
+
+          <div class="mb-3">
+            <label for="descricao" class="form-label">Observação</label>
+            <input type="text" class="form-control" id="descricao" placeholder="Digite observações, caso necessário" />
+          </div>
+
+          <div class="mb-3">
+            <label for="quantidade" class="form-label">Quantidade*</label>
+            <input type="number" class="form-control" id="quantidade" placeholder="Digite a Quantidade" min="0"
+              required />
+          </div>
+
+          <div class="mb-3">
+            <label for="tipo" class="form-label">Unidade de medida*</label>
+            <select class="form-select" id="tipo" required>
+              <option value="reagente">Kg</option>
+              <option value="solvente">g</option>
+              <option value="solvente">L</option>
+              <option value="solvente">mL</option>
+
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="localizacao" class="form-label">Localização*</label>
+            <select class="form-select" id="localizacao" required>
+              <option value="loc_prat_1A">Prateleira 1A</option>
+              <option value="loc_prat_1B">Prateleira 1B</option>
+              <option value="loc_prat_1C">Prateleira 1C</option>
+              <option value="loc_prat_1D">Prateleira 1D</option>
+              <option value="loc_prat_1E">Prateleira 1E</option>
+              <option value="loc_prat_2A">Prateleira 2A</option>
+              <option value="loc_prat_2B">Prateleira 2B</option>
+              <option value="loc_prat_2C">Prateleira 2C</option>
+              <option value="loc_prat_2D">Prateleira 2D</option>
+              <option value="loc_prat_2E">Prateleira 2E</option>
+              <option value="loc_banc_01">Bancada 01</option>
+              <option value="loc_banc_02">Bancada 02</option>
+              <option value="loc_banc_03">Bancada 03</option>
+              <option value="loc_banc_04">Bancada 04</option>
+              <option value="loc_banc_05">Bancada 05</option>
+              <option value="loc_banc_06">Bancada 06</option>
+              <option value="loc_banc_07">Bancada 07</option>
+              <option value="loc_banc_08">Bancada 08</option>
+              <option value="loc_banc_09">Bancada 09</option>
+              <option value="loc_banc_10">Bancada 10</option>
+              <option value="loc_banc_11">Bancada 11</option>
+              <option value="loc_banc_12">Bancada 12</option>
+              <option value="loc_banc_13">Bancada 13</option>
+              <option value="loc_banc_14">Bancada 14</option>
+              <option value="loc_diss_01">Dissecador 01</option>
+              <option value="loc_diss_02">Dissecador 02</option>
+              <option value="loc_diss_03">Dissecador 03</option>
+              <option value="loc_diss_04">Dissecador 04</option>
+              <option value="loc_diss_05">Dissecador 05</option>
+              <option value="loc_diss_06">Dissecador 06</option>
+              <option value="loc_diss_07">Dissecador 07</option>
+              <option value="loc_diss_08">Dissecador 08</option>
+              <option value="loc_diss_09">Dissecador 09</option>
+              <option value="loc_diss_10">Dissecador 10</option>
+              <option value="loc_diss_11">Dissecador 11</option>
+              <option value="loc_cap">Capela de reações</option>  
+              <option value="loc_gel">Geladeira</option>
+              <option value="loc_fre">Freezer</option>
+              <option value="loc_lab">Laboratório professor</option>
+              <option value="loc_gas">Sala de gases</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="formula_quimica" class="form-label">Estrutura Química</label>
+            <input type="file" class="form-control" id="formula_quimica" accept="image/*" />
+          </div>
+          <div class="mb-3">
+            <label for="indicacoes_uso" class="form-label">Indicações de Uso</label>
+            <input type="text" class="form-control" id="indicacoes_uso" placeholder="Digite as Indicações de Uso" />
+          </div>
+          
+
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>        
+      </div>
+
+
+      <footer class="fixed-bottom" id="mainFooter">
+        <p>
+          <h5>©2023 Reagentário Laboratório de Produtos e Tecnologia em Processos</h5> <br />
+          <h6>Todos os direitos reservados</h6><br />
+          <!--AC Software e Gestão  -->
+        </p>
+      </footer>
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="index.js"></script>     
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var mainFooter = document.getElementById('mainFooter')
+
+    // Adiciona um ouvinte de rolagem para mostrar o footer apenas quando a tela for rolada até o final
+  window.addEventListener('scroll', function () {
+    var windowHeight = window.innerHeight
+    var bodyHeight = document.body.offsetHeight
+    var scrollPosition = window.scrollY || window.pageYOffset
+
+    // Verifica se a tela foi rolada até o final
+    if (scrollPosition + windowHeight >= bodyHeight) {
+      mainFooter.classList.add('show-footer')
+    } else {
+      mainFooter.classList.remove('show-footer')
+    }
+  })
+})
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+/* Sobrescrever estilos do Bootstrap */
+header {
+  background-color: #272c27;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.btn-primary {
+  color: #ffffff; /* Alterar a cor do texto do botão primário */
+  background-color: #272c27; /* Alterar a cor de fundo do botão primário */
+}
