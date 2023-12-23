@@ -91,3 +91,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 })
+
+// Aplica a máscara ao elemento de entrada com id "casNumber"
+$(document).ready(function() {
+  $('#casNumber').inputmask('9999-99-9', { placeholder: 'x' });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  const inputNumero = document.getElementById("numero");
+  const errorMessage = document.getElementById("error-message");
+
+  inputNumero.addEventListener("input", function() {
+    const inputValue = inputNumero.value.trim();
+    const isValid = /^\d{0,7}$/.test(inputValue);
+
+    if (!isValid) {
+      errorMessage.textContent = "Digite apenas números com no máximo 7 caracteres.";
+      inputNumero.classList.add("error");
+    } else {
+      errorMessage.textContent = "";
+      inputNumero.classList.remove("error");
+    }
+  });
+});

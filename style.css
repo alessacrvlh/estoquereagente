@@ -1,13 +1,30 @@
-/* Sobrescrever estilos do Bootstrap */
 header {
-  background-color: #272c27;
+  background-color: #2a2c2a ; 
   color: #ffffff;
   text-align: center;
+  justify-content: center;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .btn-primary {
-  color: #ffffff; /* Alterar a cor do texto do botão primário */
-  background-color: #272c27; /* Alterar a cor de fundo do botão primário */
+  color: #ffffff; 
+  background-color: #2a2c2a; 
+  border-style: none;
+  margin-bottom: 4rem;
+}
+
+.btn-primary:hover {
+  background-color: #6b706b;   
+}
+
+footer {
+    background-color: #272C27;
+    color: #ffffff;
+    text-align: center;
+
+    width: 100%;}
+
+body {
+padding-bottom: 10rem;
 }
