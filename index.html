@@ -58,7 +58,7 @@ body {
 
 <body>
   <header>
-   <!--<img src="/reagentario/icons/LPT_Logo_Branco.png" alt="logo Laboratório de Produtos e Tecnologia em Processos"> -->
+  <!--<img src="/reagentario/icons/LPT_Logo_Branco.png" alt="logo Laboratório de Produtos e Tecnologia em Processos"> -->
     <h1>Laboratório de Produtos e Tecnologia em Processos</h1>          
   </header>
   <div class="container mt-5">
@@ -74,10 +74,12 @@ body {
           <div class="mb-3">
             <label for="tipo" class="form-label">Tipo*</label>
             <select class="form-select" id="tipo" required>
+              <option value="" disabled selected>Selecione o tipo de produto</option>
               <option value="reagente">Reagente</option>
               <option value="solvente">Solvente</option>
             </select>
           </div>
+          
 
           <div class="mb-3">
             <label for="nome" class="form-label">Nome do produto*</label>
@@ -106,19 +108,21 @@ body {
           </div>
 
           <div class="mb-3">
-            <label for="tipo" class="form-label">Unidade de medida*</label>
-            <select class="form-select" id="tipo" required>
-              <option value="reagente">Kg</option>
-              <option value="solvente">g</option>
-              <option value="solvente">L</option>
-              <option value="solvente">mL</option>
-
+            <label for="unidadeMedida" class="form-label">Unidade de medida*</label>
+            <select class="form-select" id="unidadeMedida" required>
+              <option value="" disabled selected>Selecione a unidade de medida</option>
+              <option value="Kg">Kg</option>
+              <option value="g">g</option>
+              <option value="L">L</option>
+              <option value="mL">mL</option>
             </select>
           </div>
+          
 
           <div class="mb-3">
             <label for="localizacao" class="form-label">Localização*</label>
             <select class="form-select" id="localizacao" required>
+              <option value="" disabled selected>Selecione a localização do produto</option>
               <option value="loc_prat_1A">Prateleira 1A</option>
               <option value="loc_prat_1B">Prateleira 1B</option>
               <option value="loc_prat_1C">Prateleira 1C</option>
@@ -161,6 +165,7 @@ body {
               <option value="loc_gas">Sala de gases</option>
             </select>
           </div>
+          
 
           <div class="mb-3">
             <label for="formula_quimica" class="form-label">Estrutura Química</label>
@@ -177,7 +182,7 @@ body {
       </div>
 
 
-     <!-- <footer class="fixed-bottom" id="mainFooter">
+    <!-- <footer class="fixed-bottom" id="mainFooter">
         <p>
           <h5>©2023 Reagentário Laboratório de Produtos e Tecnologia em Processos</h5> <br />
           <h6>Todos os direitos reservados</h6><br />
@@ -206,7 +211,7 @@ body {
   })
 })
       </script>
-       <script>
+      <script>
         // Aplica a máscara ao elemento de entrada com id "casNumber"
         $(document).ready(function() {
           $('#casNumber').inputmask('9999-99-9', { placeholder: 'x' });
