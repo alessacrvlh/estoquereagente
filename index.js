@@ -1,61 +1,14 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const { Pool } = require('pg')
-
-const app = express()
-const port = 3000
-
-app.use(bodyParser.json())
-
-const pool = new Pool({
-  user: 'seu_usuario', // Substitua pelo seu usuário
-  host: 'localhost',
-  database: 'seu_banco', // Substitua pelo nome do seu banco
-  password: 'sua_senha', // Substitua pela sua senha
-  port: 5432
-})
-
-app.post('/cadastro', async (req, res) => {
-  const {
-    nome,
-    tipo,
-    quantidade,
-    localizacao,
-    descricao,
-    formula_quimica,
-    indicacoes_uso,
-    indicacoes_descarte
-  } = req.body
-
-  try {
-    const result = await pool.query(
-      'INSERT INTO produtos (nome, tipo, quantidade, localizacao, descricao, formula_quimica, indicacoes_uso, indicacoes_descarte) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *',
-      [
-        nome,
-        tipo,
-        quantidade,
-        localizacao,
-        descricao,
-        formula_quimica,
-        indicacoes_uso,
-        indicacoes_descarte
-      ]
-    )
-
-    res.json(result.rows[0])
-  } catch (error) {
-    console.error('Erro ao cadastrar o produto:', error)
-    res.status(500).send('Erro interno do servidor')
-  }
-})
-
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`)
-})
-
-//ID
+// ID
 // Gera automaticamente um código de 4 dígitos incrementais
-document.getElementById('id_produto').value = generateProductId()
+function cadastrarProduto() {
+  // Lógica de geração do ID aqui
+  let formattedId = generateProductId()
+
+  // Atualiza o valor do campo ID do Produto
+  document.getElementById('id_produto').value = formattedId
+
+  // Adicione aqui a lógica para enviar os dados do formulário para o backend, se necessário
+}
 
 function generateProductId() {
   // Recupera o último ID armazenado (pode ser obtido do banco de dados)
@@ -93,24 +46,30 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 // Aplica a máscara ao elemento de entrada com id "casNumber"
-$(document).ready(function() {
-  $('#casNumber').inputmask('9999-99-9', { placeholder: 'x' });
-});
+$(document).ready(function () {
+  $('#casNumber').inputmask('9999-99-9', { placeholder: 'x' })
+})
 
-document.addEventListener("DOMContentLoaded", function() {
-  const inputNumero = document.getElementById("numero");
-  const errorMessage = document.getElementById("error-message");
+function convertePadrao(elemento) {
+  // Remove qualquer caractere não numérico
+  elemento.value = elemento.value.replace(/[^0-9]/g, '')
+}
 
-  inputNumero.addEventListener("input", function() {
-    const inputValue = inputNumero.value.trim();
-    const isValid = /^\d{0,7}$/.test(inputValue);
+document.addEventListener('DOMContentLoaded', function () {
+  const inputNumero = document.getElementById('numero')
+  const errorMessage = document.getElementById('error-message')
+
+  inputNumero.addEventListener('input', function () {
+    const inputValue = inputNumero.value.trim()
+    const isValid = /^\d{0,7}$/.test(inputValue)
 
     if (!isValid) {
-      errorMessage.textContent = "Digite apenas números com no máximo 7 caracteres.";
-      inputNumero.classList.add("error");
+      errorMessage.textContent =
+        'Digite apenas números com no máximo 7 caracteres.'
+      inputNumero.classList.add('error')
     } else {
-      errorMessage.textContent = "";
-      inputNumero.classList.remove("error");
+      errorMessage.textContent = ''
+      inputNumero.classList.remove('error')
     }
-  });
-});
+  })
+})
