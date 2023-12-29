@@ -73,3 +73,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 })
+
+function cadastrarProduto() {
+  // Lógica de validação do link da FISPQ aqui
+  let linkFispq = document.getElementById('link_fispq').value.trim()
+
+  if (!isValidUrl(linkFispq)) {
+    // Exibe uma mensagem de erro, se a URL não for válida
+    alert('Digite um link de FISPQ válido.')
+    return
+  }
+
+  // Adicione aqui a lógica para enviar os dados do formulário para o backend, se necessário
+}
+
+function isValidUrl(url) {
+  // Expressão regular para verificar se a string se parece com uma URL
+  // Esta regex é uma simplificação e pode não cobrir todos os casos
+  const urlRegex =
+    /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i
+  return urlRegex.test(url)
+}
