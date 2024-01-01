@@ -28,17 +28,12 @@
       margin-right: 20px;
     }
 
-    h2.header-title {
-      color: #ffffff;
-      margin-bottom: 1rem; /* Adicione uma margem inferior ao h2 */
-      padding: 0.5rem;
-    }
-
     .btn-primary {
       color: #ffffff;
       background-color: #2a2c2a;
       border-style: none;
       margin: 0.5rem; /* Adicione uma margem geral aos botões */
+      border-radius: 5px;
     }
 
     .btn-primary:hover {
@@ -60,6 +55,22 @@
       align-items: center;
       align-content: space-between;
     }
+
+    h2.header-title {
+      color: #272C27;
+      margin-bottom: 1rem 0; /* Adicione uma margem inferior ao h2 */
+      padding: 0.5rem;
+      text-align: center;
+    }
+    .btn-group {
+      margin-top: 1rem; /* Adicione uma margem inferior ao grupo de botões */
+      align-content: space-between;
+     
+    }
+    .btn-primary:first-child {
+      margin-right: 2rem; /* Adicione uma margem direita apenas ao primeiro botão */
+    }
+
   </style>
 
 </head>
@@ -67,11 +78,10 @@
 <body>
   <header>
     <h1>Laboratório de Produtos e Tecnologia em Processos</h1>
-  </header>
-  <div class="container mt-5">
-    <header>
-      <h2 class="header-title">O que você busca hoje?</h2>
+   
     </header>
+    <div class="container mt-5">
+      <h2 class="header-title">O que você busca hoje?</h2></div>
     <div class="mb-3 d-flex justify-content-center align-items-center">
       <div class="btn-group" role="group" aria-label="Tipo de Produto">
         <button type="button" class="btn btn-primary" onclick="setTipo('reagente')">Reagente</button>
