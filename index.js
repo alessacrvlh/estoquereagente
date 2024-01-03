@@ -94,3 +94,107 @@ function isValidUrl(url) {
     /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i
   return urlRegex.test(url)
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  var mainFooter = document.getElementById('mainFooter')
+
+  // Adiciona um ouvinte de rolagem para mostrar o footer apenas quando a tela for rolada até o final
+  window.addEventListener('scroll', function () {
+    var windowHeight = window.innerHeight
+    var bodyHeight = document.body.offsetHeight
+    var scrollPosition = window.scrollY || window.pageYOffset
+
+    // Verifica se a tela foi rolada até o final
+    if (scrollPosition + windowHeight >= bodyHeight) {
+      mainFooter.classList.add('show-footer')
+    } else {
+      mainFooter.classList.remove('show-footer')
+    }
+  })
+})
+
+// Aplica a máscara ao elemento de entrada com id "casNumber"
+$(document).ready(function () {
+  $('#casNumber').inputmask('9999-99-9', { placeholder: 'x' })
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+  const inputNumero = document.getElementById('numero')
+  const errorMessage = document.getElementById('error-message')
+
+  inputNumero.addEventListener('input', function () {
+    const inputValue = inputNumero.value.trim()
+    const isValid = /^\d{0,7}$/.test(inputValue)
+
+    if (!isValid) {
+      errorMessage.textContent =
+        'Digite apenas números com no máximo 7 caracteres.'
+      inputNumero.classList.add('error')
+    } else {
+      errorMessage.textContent = ''
+      inputNumero.classList.remove('error')
+    }
+  })
+})
+
+function transformarParaMaiusculas(elemento) {
+  elemento.value = elemento.value.toUpperCase()
+}
+
+
+//home.html
+document.addEventListener('DOMContentLoaded', function () {
+  var mainFooter = document.getElementById('mainFooter')
+
+  window.addEventListener('scroll', function () {
+    var windowHeight = window.innerHeight
+    var bodyHeight = document.body.offsetHeight
+    var scrollPosition = window.scrollY || window.pageYOffset
+
+    if (scrollPosition + windowHeight >= bodyHeight) {
+      mainFooter.classList.add('show-footer')
+    } else {
+      mainFooter.classList.remove('show-footer')
+    }
+  })
+})
+
+function pesquisar() {
+  var termoPesquisa = document.getElementById('termoPesquisa').value;
+  alert('Termo de pesquisa: ' + termoPesquisa);
+  // Adicione a lógica de pesquisa aqui
+}
+
+$(document).ready(function () {
+  $('#casNumber').inputmask('9999-99-9', { placeholder: 'x' });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const inputNumero = document.getElementById("numero");
+  const errorMessage = document.getElementById("error-message");
+
+  inputNumero.addEventListener("input", function () {
+    const inputValue = inputNumero.value.trim();
+    const isValid = /^\d{0,7}$/.test(inputValue);
+
+    if (!isValid) {
+      errorMessage.textContent = "Digite apenas números com no máximo 7 caracteres.";
+      inputNumero.classList.add("error");
+    } else {
+      errorMessage.textContent = "";
+      inputNumero.classList.remove("error");
+    }
+  });
+});
+
+function transformarParaMaiusculas(elemento) {
+  elemento.value = elemento.value.toUpperCase();
+}
+
+let tipoProduto = '';
+
+function setTipo(tipo) {
+  tipoProduto = tipo;
+  alert(`Tipo de produto selecionado: ${tipo}`);
+}
+
