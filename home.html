@@ -11,7 +11,7 @@
   <title>Reagentário LPT - Pesquisa</title>
   <style>
     header {
-      background-color: #2a2c2a;
+      background-color: #5E605E;
       color: #ffffff;
       display: flex;
       text-align: center;
@@ -25,6 +25,7 @@
       max-height: 100px;
       height: center;
       display: inline-block;
+      float: right; 
       margin-right: 20px;
     }
 
@@ -41,7 +42,7 @@
     }
 
     footer {
-      background-color: #272C27;
+      background-color: #5E605E;
       color: #ffffff;
       text-align: center;
       width: 100%;
@@ -86,10 +87,11 @@
 
 <body>
   <header>
+    <img src="/reagentario/icons/LPT_Logo_Branco_1.png" alt="logo Laboratório de Produtos e Tecnologia em Processos">
     <h1>Laboratório de Produtos e Tecnologia em Processos</h1>
   </header>
   <div class="container mt-5">
-    <h2 class="header-title">O que você busca hoje?</h2>
+    <h2 class="header-title">Olá, o que busca hoje?</h2>
   </div>
   <!--<div class="mb-3 d-flex justify-content-center align-items-center">
     <div class="btn-group" role="group" aria-label="Tipo de Produto">
@@ -98,14 +100,14 @@
     </div>
   </div>-->
   <div class="search-container">
-    <input type="text" class="search-input" id="termoPesquisa" placeholder="Digite o termo de pesquisa">
+    <input type="text" class="search-input" id="termoPesquisa" placeholder="Digite o nome de um produto">
     <button type="button" class="btn btn-primary" onclick="pesquisar()">Pesquisar</button>
   </div>
   <footer class="fixed-bottom" id="mainFooter">
     <p>
       <h5>©2023 Reagentário Laboratório de Produtos e Tecnologia em Processos</h5> <br />
       <h6>Todos os direitos reservados</h6><br />
-      AC Software e Gestão
+      <!--AC Software e Gestão-->
     </p>
   </footer>
 
