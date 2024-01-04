@@ -1,0 +1,3 @@
+[submodule "reagentario"]
+    path = reagentario
+    url = https://github.com/alessacrvlh/reagentario.git
