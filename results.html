@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.7/jquery.inputmask.min.js"></script>
+
+  <title>Reagentário LPT - Pesquisa</title>
+  <style>
+    header {
+      background-color: #2a2c2a;
+      color: #ffffff;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      min-height: 6rem;
+    }
+
+    header img {
+      max-width: 100%;
+      max-height: 100px;
+      height: center;
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .btn-primary {
+      color: #ffffff;
+      background-color: #2a2c2a;
+      border-style: none;
+      margin: 0.5rem; /* Adicione uma margem geral aos botões */
+      border-radius: 10px; /* Adicione o arredondamento das bordas */
+    }
+
+    .btn-primary:hover {
+      background-color: #6b706b;
+    }
+
+    footer {
+      background-color: #272C27;
+      color: #ffffff;
+      text-align: center;
+      width: 100%;
+    }
+
+    body {
+      padding-bottom: 5rem;
+    }
+
+    body header {
+      align-items: center;
+      align-content: space-between;
+    }
+
+    h2.header-title {
+      color: #272C27;
+      margin-bottom: 1rem; /* Adicione uma margem inferior ao h2 */
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    .btn-group {
+      margin-top: 1rem; /* Adicione uma margem superior ao grupo de botões */
+      align-content: space-between;
+    }
+
+    .search-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .search-input {
+      padding: 0.5rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-right: 1rem;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1>Laboratório de Produtos e Tecnologia em Processos</h1>
+  </header>
+  <div class="container mt-5">
+    <h2 class="header-title">O que você busca hoje?</h2>
+  </div>
+  <!--<div class="mb-3 d-flex justify-content-center align-items-center">
+    <div class="btn-group" role="group" aria-label="Tipo de Produto">
+      <button type="button" class="btn btn-primary" onclick="setTipo('reagente')">Reagente</button>
+      <button type="button" class="btn btn-primary" onclick="setTipo('solvente')">Solvente</button>
+    </div>
+  </div>-->
+  <div class="search-container">
+    <input type="text" class="search-input" id="termoPesquisa" placeholder="Digite o termo de pesquisa">
+    <button type="button" class="btn btn-primary" onclick="pesquisar()">Pesquisar</button>
+  </div>
+  <!-- Adicione esta seção abaixo da seção de pesquisa -->
+<div class="container mt-5">
+    <h2 class="header-title">Resultados da Pesquisa</h2>
+    <ul id="resultadoPesquisa" class="list-group">
+      <!-- Os resultados da pesquisa serão exibidos aqui -->
+    </ul>
+  </div>
+  
+  <footer class="fixed-bottom" id="mainFooter">
+    <p>
+      <h5>©2023 Reagentário Laboratório de Produtos e Tecnologia em Processos</h5> <br />
+      <h6>Todos os direitos reservados</h6><br />
+      AC Software e Gestão
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var mainFooter = document.getElementById('mainFooter')
+
+      window.addEventListener('scroll', function () {
+        var windowHeight = window.innerHeight
+        var bodyHeight = document.body.offsetHeight
+        var scrollPosition = window.scrollY || window.pageYOffset
+
+        if (scrollPosition + windowHeight >= bodyHeight) {
+          mainFooter.classList.add('show-footer')
+        } else {
+          mainFooter.classList.remove('show-footer')
+        }
+      })
+    })
+
+    function pesquisar() {
+      var termoPesquisa = document.getElementById('termoPesquisa').value;
+      alert('Termo de pesquisa: ' + termoPesquisa);
+      // Adicione a lógica de pesquisa aqui
+    }
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#casNumber').inputmask('9999-99-9', { placeholder: 'x' });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const inputNumero = document.getElementById("numero");
+      const errorMessage = document.getElementById("error-message");
+
+      inputNumero.addEventListener("input", function () {
+        const inputValue = inputNumero.value.trim();
+        const isValid = /^\d{0,7}$/.test(inputValue);
+
+        if (!isValid) {
+          errorMessage.textContent = "Digite apenas números com no máximo 7 caracteres.";
+          inputNumero.classList.add("error");
+        } else {
+          errorMessage.textContent = "";
+          inputNumero.classList.remove("error");
+        }
+      });
+    });
+  </script>
+  <script>
+    function transformarParaMaiusculas(elemento) {
+      elemento.value = elemento.value.toUpperCase();
+    }
+  </script>
+
+  <script>
+    let tipoProduto = '';
+
+    function setTipo(tipo) {
+      tipoProduto = tipo;
+      alert(`Tipo de produto selecionado: ${tipo}`);
+    }
+  </script>
+  <!-- Atualize o script existente ou adicione este script abaixo -->
+<script>
+    function aplicarFiltro() {
+      var termoPesquisa = document.getElementById('termoPesquisa').value;
+      alert('Termo de pesquisa: ' + termoPesquisa);
+  
+      // Adicione a lógica de aplicação do filtro com base no tipo de produto
+      var tipoProdutoFiltrado = tipoProduto; // Use a variável tipoProduto selecionada anteriormente
+  
+      // Lógica para obter resultados simulados (substitua com a sua lógica real)
+      var resultadosSimulados = [
+        { nome: 'Produto 1', tipo: 'Reagente' },
+        { nome: 'Produto 2', tipo: 'Solvente' },
+        { nome: 'Produto 3', tipo: 'Reagente' }
+        // Adicione mais resultados conforme necessário
+      ];
+  
+      // Exibir resultados na lista
+      exibirResultados(resultadosSimulados);
+    }
+  
+    function exibirResultados(resultados) {
+      var resultadoPesquisa = document.getElementById('resultadoPesquisa');
+  
+      // Limpar resultados anteriores
+      resultadoPesquisa.innerHTML = '';
+  
+      // Exibir os resultados na lista
+      resultados.forEach(function (produto) {
+        var itemLista = document.createElement('li');
+        itemLista.className = 'list-group-item';
+        itemLista.textContent = `${produto.nome} - Tipo: ${produto.tipo}`;
+        resultadoPesquisa.appendChild(itemLista);
+      });
+    }
+  </script>
+  
+</body>
+
+</html>
