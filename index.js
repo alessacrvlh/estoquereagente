@@ -187,9 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-<<<<<<< HEAD
-
-
 //pagina de cliente
 let tipoProduto = ''; // Variável global para armazenar o tipo de produto selecionado
 
@@ -202,7 +199,7 @@ let tipoProduto = ''; // Variável global para armazenar o tipo de produto selec
       // Lógica de validação do formulário e envio dos dados para o backend
       alert(`Dados do formulário:\nTipo: ${tipoProduto}\nOutros campos: Adicione a lógica aqui`);
     }
-=======
+
 function transformarParaMaiusculas(elemento) {
   elemento.value = elemento.value.toUpperCase();
 }

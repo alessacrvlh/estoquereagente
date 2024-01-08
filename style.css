@@ -1,6 +1,6 @@
 :root{
   --gray-darker:hsl(120, 1%, 24%); /*#3C3D3C*/
-  --background:hsl(120, 24%, 96%); /*#F2F7F2*/ /*#DCE0DC*/
+  --background: hsl(0, 0%, 98%); /*#F9F9F9*/ /*#DCE0DC*/
   --gray-medium:hsl(120, 1%, 38%);/*#5F615F*/
   --gray-lighter:hsl(120, 3%, 71%);/*#B4B8B4*/
   --gray:hsl(120, 1%, 55%);/*##8C8F8C*/
