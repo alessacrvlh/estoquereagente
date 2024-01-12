@@ -187,28 +187,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//pagina de cliente
-let tipoProduto = ''; // Variável global para armazenar o tipo de produto selecionado
+// Página de cliente
+let tipoProdutoCliente = ''; // Variável global para armazenar o tipo de produto selecionado
 
-    function setTipo(tipo) {
-      tipoProduto = tipo;
-      alert(`Tipo de produto selecionado: ${tipo}`);
-    }
-
-    function cadastrarProduto() {
-      // Lógica de validação do formulário e envio dos dados para o backend
-      alert(`Dados do formulário:\nTipo: ${tipoProduto}\nOutros campos: Adicione a lógica aqui`);
-    }
-
-function transformarParaMaiusculas(elemento) {
-  elemento.value = elemento.value.toUpperCase();
-}
-
-let tipoProduto = '';
-
-function setTipo(tipo) {
-  tipoProduto = tipo;
+function setTipoCliente(tipo) {
+  tipoProdutoCliente = tipo;
   alert(`Tipo de produto selecionado: ${tipo}`);
 }
 
->>>>>>> 1e7d403c128f05c5af44ba69350d24b514adbbf2
+function cadastrarProdutoCliente() {
+  // Lógica de validação do formulário e envio dos dados para o backend
+  alert(`Dados do formulário:\nTipo: ${tipoProdutoCliente}\nOutros campos: Adicione a lógica aqui`);
+}
+
+function transformarParaMaiusculasCliente(elemento) {
+  elemento.value = elemento.value.toUpperCase();
+}
