@@ -96,15 +96,10 @@
   <div class="container mt-5">
     <h2 class="header-title">O que você busca hoje?</h2>
   </div>
-  <div class="mb-3 d-flex justify-content-center align-items-center">
-    <div class="btn-group" role="group" aria-label="Tipo de Produto">
-        <button type="button" class="btn btn-primary" onclick="setTipo('reagente')"> <i class="material-icons">science</i>Reagente</button>
-        <button type="button" class="btn btn-primary" onclick="setTipo('solvente')">
-            <i class="material-icons">science</i> Solvente
-        </button>
+    <div class="search-container">
+    <input type="text" class="search-input" id="termoPesquisa" placeholder="Digite o nome de um produto">
+    <button type="button" class="btn btn-primary" onclick="pesquisar()"><i class="material-icons">search</i></button>
     </div>
-</div>
-
   
   <footer class="fixed-bottom" id="mainFooter">
     <p>
