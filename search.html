@@ -34,8 +34,8 @@
       color: #ffffff;
       background-color: #2a2c2a;
       border-style: none;
-      margin: 0.5rem; /* Adicione uma margem geral aos botões */
-      border-radius: 10px; /* Adicione o arredondamento das bordas */
+      margin: -4rem; 
+      border-radius: 10px; 
       align-items: center;
     }
 
@@ -63,19 +63,22 @@
 
     h2.header-title {
       color: #272C27;
-      margin-bottom: 1rem; /* Adicione uma margem inferior ao h2 */
+      margin-bottom: 1rem; 
       padding: 0.5rem;
       text-align: center;
     }
 
     .btn-group {
-      margin-top: 1rem; /* Adicione uma margem superior ao grupo de botões */
+      margin-top: 1rem; 
       align-content: space-between;
     }
 
     .search-container {
       text-align: center;
       margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .search-input {
@@ -132,7 +135,6 @@
     function pesquisar() {
       var termoPesquisa = document.getElementById('termoPesquisa').value;
       alert('Termo de pesquisa: ' + termoPesquisa);
-      // Adicione a lógica de pesquisa aqui
     }
   </script>
   <script>
