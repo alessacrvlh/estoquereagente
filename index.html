@@ -92,6 +92,11 @@ body {
           </div>
 
           <div class="mb-3">
+            <label for="nome" class="form-label">Fornecedor</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite o nome do Fornecedor" oninput="transformarParaMaiusculas(this)" />
+          </div>
+
+          <div class="mb-3">
             <label for="link_fispq" class="form-label">Link da ficha de segurança do produto (FISPQ)*</label>
             <input type="text" class="form-control" id="link_fispq" placeholder="Digite link da ficha de segurança do produto" required />
             <small id="link_fispq_help" class="form-text text-muted">Certifique-se de inserir uma URL válida.</small>
